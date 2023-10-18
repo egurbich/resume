@@ -1,0 +1,25 @@
+
+{{#with main}}
+    <main>
+        <section>
+            {{> title data = ../title big = true}}
+            <div>
+                <ul>
+                    {{#each skills}}
+                        <li>{{this.name}} {{#unless isMain}} (in progress) {{/unless}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+        <section>
+            {{> title data = ../hobbiesTitle big = false}}
+            <div>
+                <ul>
+                    {{#each hobbies}}
+                        <li>{{this.name}} {{#if isMain}} (favourite) {{/if}}</li>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </main>
+{{/with}}

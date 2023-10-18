@@ -1,0 +1,84 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <header>
+        <div>
+            <h1>Dmytro Ivanov | Resume</h1>
+        </div>
+        <div>
+            <b>Junior Fullstack JS Developer</b>
+        </div>
+        <br />
+        <div>
+            <em>{{salary}}</em>
+        </div>
+
+        <br>
+        <hr>
+    </header>
+
+    <main>
+        {{#with main}}
+            <section>
+                {{> title data = "Work history"}}
+                <div>
+                    <ul>
+                        {{#each works }}
+                            <li>
+                                <div>{{position}}</div>
+                                <br>
+                                <div>
+                                    {{duration.from}} - 
+                                    {{#if duration.to}} 
+                                        {{duration.to}} 
+                                    {{else}} 
+                                        (still working here) 
+                                    {{/if}}
+                                    </div>
+                                <br>
+                                <div><a href="{{company.url}}" target="_blank">{{company.name}}</a></div>
+
+                                <br>
+                                <div>
+                                    <string>Projects ({{projectAmount}})</string>
+                                </div>
+                                <br>
+                                <ul>
+                                    {{#each projects}}
+                                        <li>
+                                            <div>{{name}}</div>
+                                            <div>
+                                                {{#if url }}
+                                                    {{> link text=name href=url blank=true noLine=true }}
+                                                {{else}}
+                                                    <b>{{name}}</b>
+                                                {{/if }}
+                                            </div>
+                                            <br>
+                                            <div>{{about}}</div>
+                                            <br>
+                                            <div><em>Project stacks ({{stackAmount}})</em></div>
+                                            
+                                            {{#each stacks}}
+                                                <div>{{this.name}}</div>
+                                            {{/each}}
+                                            <br>
+                                            <div><em>Project awards</em></div>
+                                              {{#each awards}}
+                                                <div>{{this.name}}</div>
+                                            {{/each}}
+                                        
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+        {{/with}}
+    </main>
+</div>
