@@ -1,0 +1,96 @@
+
+<div class="bio-container">
+  <h2>{{name}}</h2>
+  <ul>
+    <li>Birthdate: {{birthdate}}</li>
+    <li>Birthplace: {{birthplace}}</li>
+    <li>Deathdate: {{deathdate}}</li>
+    <li>Deathplace: {{deathplace}}</li>
+    <li>Nationality: {{nationality}}</li>
+    <li>Occupation: {{occupation}}</li>
+    <li>Known For:</li>
+    <ul>
+      {{#each known_for}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <li>Education:</li>
+    <ul>
+      {{#each education}}
+        <li>
+          <b>Degree:</b> {{degree}}
+          <b>Field:</b> {{field}}
+          <b>Institution:</b> {{institution}}
+          <b>Year:</b> {{year}}
+        </li>
+      {{/each}}
+    </ul>
+    <li>Notable Publications:</li>
+    <ul>
+      {{#each notable_publications}}
+        <li>
+          <b>Title:</b> {{title}}
+          <b>Year:</b> {{year}}
+          <b>Publisher:</b> {{publisher}}
+        </li>
+      {{/each}}
+    </ul>
+    <li>Partners:</li>
+    <ul>
+      {{#each partners}}
+        <li>
+          <b>Name:</b> {{name}}
+          <b>Relationship:</b> {{relationship}}
+          <b>Years:</b> {{years}}
+        </li>
+      {{/each}}
+    </ul>
+    <li>Awards:</li>
+    <ul>
+      {{#each awards}}
+        <li>
+          <b>Title:</b> {{title}}
+          <b>Year:</b> {{year}}
+          <b>Description:</b> {{description}}
+        </li>
+      {{/each}}
+    </ul>
+    <li>Influences:</li>
+    <ul>
+      {{#each influences}}
+        <li>{{.}}</li>
+      {{/each}}
+    </ul>
+    <li>Influenced:</li>
+    <ul>
+      {{#each influenced}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    <li>Quotes:</li>
+    <ul>
+      {{#each quotes}}
+        <li>{{.}}</li>
+      {{/each}}
+    </ul>
+    <li>Major Discoveries:</li>
+    <ul>
+      {{#each major_discoveries}}
+        <li>
+          <b>Title:</b> {{title}}
+          <b>Year:</b> {{year}}
+          <b>Description:</b> {{description}}
+        </li>
+      {{/each}}
+    </ul>
+    <li>Contributions:</li>
+    <ul>
+      <li>
+        <b>Title:</b> {{contributions.title}}
+        <b>Description:</b> {{contributions.description}}
+        <b>Year:</b> {{contributions.year}}
+        <b>Field:</b> {{contributions.field}}
+      </li>
+    </ul>
+  </ul>
+</div>
