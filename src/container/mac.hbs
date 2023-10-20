@@ -1,0 +1,39 @@
+<div
+> <h1>{{name}}</h1>
+  <p>{{description}}</p>
+  <p>Category: {{category}}</p>
+  <p>Price: ${{price}}</p>
+
+  <h2>Features</h2>
+  <ul>
+      <li><strong>Processor:</strong> {{features.processor.brand}} {{features.processor.model}}, {{features.processor.speed}}, {{features.processor.cores}} cores, {{features.processor.cache}} cache</li>
+      <li><strong>Memory:</strong> {{features.memory.size}} {{features.memory.type}} RAM, {{features.memory.speed}} speed</li>
+      <li><strong>Storage:</strong> {{features.storage.size}} {{features.storage.type}}</li>
+      <li><strong>Display:</strong> {{features.display.size}}, {{features.display.resolution}}, {{features.display.technology}}, {{features.display.color_space}} color space, {{features.display.brightness}}, {{features.display.refresh_rate}} refresh rate</li>
+      <li><strong>Graphics:</strong> {{features.graphics.brand}} {{features.graphics.model}}, {{features.graphics.memory}} memory</li>
+      <li><strong>Ports:</strong>
+          <ul>
+              {{#each features.ports}}
+              <li>{{this.type}} - Count: {{this.count}}
+                  <ul>
+                      {{#each this.features}}
+                      <li>{{this}}</li>
+                      {{/each}}
+                  </ul>
+              </li>
+              {{/each}}
+          </ul>
+      </li>
+      <li><strong>Battery:</strong> {{features.battery.type}}, {{features.battery.capacity}}, {{features.battery.life}}</li>
+      <li><strong>Weight:</strong> {{features.weight}}</li>
+      <li><strong>Dimensions:</strong> Height: {{features.dimensions.height}}, Width: {{features.dimensions.width}}, Depth: {{features.dimensions.depth}}</li>
+      <li><strong>Operating System:</strong> {{features.operating_system}}</li>
+      <li><strong>Accessories:</strong>
+          <ul>
+              {{#each features.accessories}}
+              <li>{{this.name}} - Price: ${{this.price}}</li>
+              {{/each}}
+          </ul>
+      </li>
+  </ul>
+</div>
