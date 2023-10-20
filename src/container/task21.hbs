@@ -1,0 +1,26 @@
+<div class="task21-container">
+    <h2>Task 21</h2>
+
+    <h2>{{heading.main.title}}</h2>
+    <p>{{heading.main.text}}</p>
+
+    <h2>{{heading.second.title}}</h2>
+    <p>{{heading.second.text}}</p>
+
+    <h3>{{heading.subblock.title}}</h3>
+    <p>{{heading.subblock.text}}</p>
+
+    <h3>{{nested_display.title}}</h3>
+    <p>{{nested_display.children_display.title}}</p>
+    <p>{{nested_display.children_display.text}}</p>
+    <button class="button solid">{{nested_display.button.text}}</button>
+
+    <h2>{{paragraph.title}}</h2>
+    <p>{{paragraph.text}}</p>
+    <button class="button solid">{{paragraph.button.text}}</button>
+    <ul>
+      {{#each paragraph.list_name}}
+        <li><a href="{{url}}">{{text}}</a></li>
+      {{/each}}
+    </ul>
+  </div>
