@@ -1,0 +1,109 @@
+<div class="container">
+
+    <section class="mb-5">
+        <div class="row">
+            <div class="card">
+                <div class="col-6">
+                    <ul class="nav">
+                        {{#each navigation.links as |link|}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{link.href}}">{{link.text}}</a>
+                        </li>                        
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header class="mb-5">
+        <h1 class="h1">{{header.title}}</h1>
+        <a href="{{header.button.link}}" class="btn btn-outline-secondary">{{header.button.text}}</a>
+    </header>
+
+    <div><hr /></div>
+
+    <section class="goods-block mb-5">
+        <h2>{{goodsBlock.title}}</h2>
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="col-12">
+                        <div class="row  gx-3">
+                            {{#each goodsBlock as |good|}}
+                                <div class="col-2 mt-2"><img src="{{good.image}}" alt="{{good.name}}" class="img-fluid"></div>                        
+                                <div class="col-4 mt-2">
+                                    <h3>{{good.name}}</h3>
+                                    <p>{{good.description}}</p>
+                                </div>
+                                <div class="col-2 mt-2">
+                                    <div>{{good.price.title}}:</div>
+                                    <div>{{good.price.value}}</div>
+                                </div>
+                                <div class="col-2 mt-2">
+                                    <p>{{good.amount}}</p>
+                                </div>
+                                <div class="col-2 mt-2">
+                                    <button type="button" class="btn btn-primary mb-2">Додати</button>
+                                    <button type="button" class="btn btn-outline-danger">Видалити</button>
+                                </div>                                    
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="total-block mb-5">
+      <h3>{{total.title}}</h3>
+      <h2>{{total.amount}}</h2>
+      <p class="mb-3">{{total.delivery}}</p>
+      <div class="buttons">
+        <div class="mb-3"><button type="button" class="btn btn-success">Оформити замовлення</button></div>
+        <div class="mb-3"><button type="button" class="btn btn-outline-success">Офрмити кредит</button></div>
+      </div>
+    </section>
+
+    <section class="goods-other-block mb-5">
+      <h2>{{goodsOtherBlock.title}}</h2>
+      <div class="row">
+        {{#each goodsOtherBlock.cards as |card|}}
+          <div class="col-md-4">
+            <div class="card-body">
+              <img src="{{card.image}}" alt="{{card.title}}" class="card-img-top">
+              <div>
+                <h5 class="card-title">{{card.title}}</h5>
+                {{#if isHot}}<span class="badge rounded-pill text-bg-warning">HOT!</span>{{/if}}
+                {{#if isNew}}<span class="badge rounded-pill text-bg-primary">Нове</span>{{/if}}
+                <p class="card-text">{{card.description}}</p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <h2>{{subscribe.header}}</h2>
+      <p>{{subscribe.description}}</p>
+      <div class="buttons">
+        <div class="mb-3"><button type="button" class="btn btn-primary">Register Now</button></div>
+        <div class="mb-3"><button type="button" class="btn btn-primary">Buy Subscription</button></div>
+      </div>
+    </section>
+
+    <footer class="mt-5">
+      <div class="row">
+        {{#each footer as |footerGroup|}}
+          <div class="col-md-3">
+            <ul class="list-unstyled">
+              {{#each footerGroup as |link|}}
+                <li><a href="{{link.link}}">{{link.text}}</a></li>
+              {{/each}}
+            </ul>
+          </div>
+        {{/each}}
+      </div>
+    </footer>
+  </div>
