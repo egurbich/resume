@@ -23,37 +23,9 @@
 
     <div><hr /></div>
 
-    <section class="goods-block mb-5">
-        <h2>{{goodsBlock.title}}</h2>
-        <div class="container">
-            <div class="row">
-                <div class="card">
-                    <div class="col-12">
-                        <div class="row  gx-3">
-                            {{#each goodsBlock as |good|}}
-                                <div class="col-2 mt-2"><img src="{{good.image}}" alt="{{good.name}}" class="img-fluid"></div>                        
-                                <div class="col-4 mt-2">
-                                    <h3>{{good.name}}</h3>
-                                    <p>{{good.description}}</p>
-                                </div>
-                                <div class="col-2 mt-2">
-                                    <div>{{good.price.title}}:</div>
-                                    <div>{{good.price.value}}</div>
-                                </div>
-                                <div class="col-2 mt-2">
-                                    <p>{{good.amount}}</p>
-                                </div>
-                                <div class="col-2 mt-2">
-                                    <button type="button" class="btn btn-primary mb-2">Додати</button>
-                                    <button type="button" class="btn btn-outline-danger">Видалити</button>
-                                </div>                                    
-                            {{/each}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{> cartGoodsItem}}
+
+    <div><hr /></div>
 
     <section class="total-block mb-5">
       <h3>{{total.title}}</h3>
