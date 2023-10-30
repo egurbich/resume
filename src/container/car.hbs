@@ -1,0 +1,105 @@
+<div>
+<h1>{{make}} {{model}}</h1>
+    <p>Year: {{year}}</p>
+    <p>Color: {{color}}</p>
+
+    <h2>Features</h2>
+    <div>
+        <h3>Interior</h3>
+        <p>Seats:</p>
+        <ul>
+            <li>Material: {{features.interior.seats.material}}</li>
+            <li>Color: {{features.interior.seats.color}}</li>
+            <li>Heated: {{features.interior.seats.heated}}</li>
+            <li>Ventilated: {{features.interior.seats.ventilated}}</li>
+        </ul>
+        <p>Dashboard:</p>
+        <ul>
+            <li>Material: {{features.interior.dashboard.material}}</li>
+            <li>Color: {{features.interior.dashboard.color}}</li>
+            <p>Display:</p>
+            <ul>
+                <li>Type: {{features.interior.dashboard.display.type}}</li>
+                <li>Size: {{features.interior.dashboard.display.size}} inches</li>
+                <li>Resolution: {{features.interior.dashboard.display.resolution}}</li>
+                <li>Touchscreen: {{features.interior.dashboard.display.touchscreen}}</li>
+            </ul>
+        </ul>
+        <p>Audio:</p>
+        <ul>
+            <li>System: {{features.interior.audio.system}}</li>
+            <li>Speakers: {{features.interior.audio.speakers}}</li>
+            <li>Subwoofer: {{features.interior.audio.subwoofer}}</li>
+            <li>Bluetooth: {{features.interior.audio.bluetooth}}</li>
+            <li>USB: {{features.interior.audio.USB}}</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Exterior</h3>
+        <p>Wheels:</p>
+        <ul>
+            <li>Size: {{features.exterior.wheels.size}} inches</li>
+            <li>Type: {{features.exterior.wheels.type}}</li>
+            <li>Color: {{features.exterior.wheels.color}}</li>
+        </ul>
+        <p>Headlights:</p>
+        <ul>
+            <li>Type: {{features.exterior.headlights.type}}</li>
+            <li>Brightness: {{features.exterior.headlights.brightness}}</li>
+            <li>Automatic: {{features.exterior.headlights.automatic}}</li>
+        </ul>
+        <p>Sunroof:</p>
+        <ul>
+            <li>Type: {{features.exterior.sunroof.type}}</li>
+            <li>Size: {{features.exterior.sunroof.size}}</li>
+            <li>Automatic: {{features.exterior.sunroof.automatic}}</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Safety</h3>
+        <p>Airbags:</p>
+        <ul>
+            <li>Front: {{features.safety.airbags.front}}</li>
+            <li>Side: {{features.safety.airbags.side}}</li>
+            <li>Knee: {{features.safety.airbags.knee}}</li>
+            <li>Rear: {{features.safety.airbags.rear}}</li>
+        </ul>
+        <p>Assistance:</p>
+        <ul>
+            <li>Blind Spot Monitoring: {{features.safety.assistance.blind_spot_monitoring}}</li>
+            <li>Rear Cross Traffic Alert: {{features.safety.assistance.rear_cross_traffic_alert}}</li>
+            <li>Lane Departure Warning: {{features.safety.assistance.lane_departure_warning}}</li>
+            <li>Adaptive Cruise Control: {{features.safety.assistance.adaptive_cruise_control}}</li>
+            <li>Collision Warning: {{features.safety.assistance.collision_warning}}</li>
+        </ul>
+    </div>
+
+    <h2>Engine</h2>
+    <p>Type: {{engine.type}}</p>
+    <p>Displacement: {{engine.displacement}} L</p>
+    <p>Horsepower: {{engine.horsepower}}</p>
+    <p>Torque: {{engine.torque}}</p>
+    <p>Transmission:</p>
+    <ul>
+        <li>Type: {{engine.transmission.type}}</li>
+        <li>Gears: {{engine.transmission.gears}}</li>
+    </ul>
+
+    <h2>Fuel Economy</h2>
+    <p>City: {{fuel_economy.city}} mpg</p>
+    <p>Highway: {{fuel_economy.highway}} mpg</p>
+    <p>Combined: {{fuel_economy.combined}} mpg</p>
+
+    <h2>Price</h2>
+    <p>Base Price: ${{price.base}}</p>
+    <p>Destination: ${{price.destination}}</p>
+    <p>Options:</p>
+    <ul>
+        <li>Navigation: ${{price.options.navigation}}</li>
+        <li>Moonroof: ${{price.options.moonroof}}</li>
+        <li>Premium Paint: ${{price.options.premium_paint}}</li>
+    </ul>
+    <p>Total Price: ${{price.total}}</p>
+</div>
