@@ -1,26 +1,42 @@
-<div class="task21-container">
-    <h2>Task 21</h2>
+<main>
+  <div class="p-3 txt border rounded">
+    <div class="p-3 text border rounded">
+      <div><h1>{{heading.main.title}}</h1></div>
+      <p>{{heading.main.text}}</p>
+      <div class="pb-3"><button type="button" class="btn btn-primary">Primary</button></div>
+      <div><button type="button" class="btn btn-outline-primary">Primary</button></div>
+    </div>
 
-    <h2>{{heading.main.title}}</h2>
-    <p>{{heading.main.text}}</p>
-
+  <div class="mt-3 p-3 text border rounded">
     <h2>{{heading.second.title}}</h2>
     <p>{{heading.second.text}}</p>
-
-    <h3>{{heading.subblock.title}}</h3>
-    <p>{{heading.subblock.text}}</p>
-
-    <h3>{{nested_display.title}}</h3>
-    <p>{{nested_display.children_display.title}}</p>
-    <p>{{nested_display.children_display.text}}</p>
-    <button class="button solid">{{nested_display.button.text}}</button>
-
-    <h2>{{paragraph.title}}</h2>
-    <p>{{paragraph.text}}</p>
-    <button class="button solid">{{paragraph.button.text}}</button>
-    <ul>
-      {{#each paragraph.list_name}}
-        <li><a href="{{url}}">{{text}}</a></li>
-      {{/each}}
-    </ul>
+    <div><button type="button" class="btn btn-dark">Dark</button></div>
+    <div class="pt-3"><button type="button" class="btn btn-light border">Dark</button></div>
   </div>
+
+  <div class="mt-3 p-3 text border rounded">
+    <div class="display-1">{{heading.subblock.title}}</div>
+    <p>{{heading.subblock.text}}</p>
+    <div class="mt-3 p-3 text border rounded">
+      <div class="display-4">{{nested_display.title}}</div>
+      <p>{{nested_display.children_display.title}}</p>
+      <button class="btn btn-outline-warning">Warning</button>
+    </div>
+    <div class="mt-3"><h6>{{nested_display.children_display.text}}</h6></div>
+
+    <button class="mt-3 btn btn-info">{{nested_display.button.text}}</button>
+  </div>
+
+  <div class="mt-3 p-3 text border rounded">
+    <p class="text-uppercase">{{paragraph.title}}</p>
+    <p class="text-lowercase">{{paragraph.text}}</p>
+    <button class="btn btn-light">{{paragraph.button.text}}</button>
+    <div class="mt-3 p-3 text border rounded">
+      <ul class="list-group">
+        {{#each paragraph.list_name}}
+          <li class="m-3"><a href="{{url}}">{{text}}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</main>
