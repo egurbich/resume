@@ -1,0 +1,119 @@
+<div class="container">
+
+    <div class="card my-4">
+      <div class="nav">
+        {{#each navigation.links}}
+            {{#if href}}
+                <div class="nav-item"><a class="nav-link" href="{{href}}">{{text}}</a></div>
+            {{else}}
+                <div>{{text}}</div>
+            {{/if}}
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="row gy-2">
+      <div class="col-8 mb-4">
+          <h2>{{formBlock.header}}</h2>
+          <p>{{formBlock.rating.title}}: {{formBlock.rating.value}}</p>
+          <div class="nav nav-tabs mb-4">
+            {{#each formBlock.actionBlock.tabs}}
+              <a class="nav-item nav-link {{#if isActive}}active{{/if}}" href="#">{{text}}</a>
+            {{/each}}
+        </div>
+        <div><hr /></div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <div><img src="{{formBlock.goodsInfo.photo}}" class="card-img-top" alt="{{formBlock.goodsInfo.name}}"></div>
+            <div><h5 class="card-title">{{formBlock.goodsInfo.name}}</h5></div>
+          </div>
+        </div>
+      </div> 
+      <div class="col-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <div>{{formBlock.actionBlock.report.title}}</div>
+            </div>
+            <a class="btn btn-secondary" href="{{formBlock.actionBlock.report.button.link}}">{{formBlock.actionBlock.report.button.text}}</a>
+          </div>
+        </div>
+        <div><hr /></div> 
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <h5>{{formBlock.goodsInfo.price}}</h5>
+            {{#if formBlock.goodsInfo.inMarket}}
+                <p>Є в наявності</p>
+            {{else}}
+                <p>Немає в наявності</p>
+            {{/if}}        
+            {{#each formBlock.goodsInfo.buttons as |button|}}
+            <div>
+              <a class="btn {{#if button.isPrimary}} btn-primary {{else if button.isSecondary}} btn-secondary {{/if}} my-2" 
+                href="{{button.link}}">
+                {{button.text}}
+              </a>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="card mt-2">
+          <div class="card-body">
+              <p class="card-title">{{formBlock.goodsInfo.seller.title}}: <b>{{formBlock.goodsInfo.seller.value}}</b></p>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="row">
+        <div class="col-8 mb-4">
+            <h3>{{formBlock.feedbackBlock.title}}</h3>
+        </div>
+        <div class="col-8">
+            <div>
+                {{#each formBlock.feedbackBlock.buttons}}
+                  <button class="btn 
+                    {{#if isWarning}}btn-warning{{/if}} 
+                    {{#if isSuccess}}btn-success{{/if}} 
+                    {{#if isDanger}}btn-danger{{/if}}" 
+                    href="{{this.link}}">
+                    {{this.text}}
+                  </button>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div><hr /></div>
+    {{> reviewItem}}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 text-center">
+              <div class="card text-bg-success">                
+                <div class="card-body">
+                  <h2>{{service.title}}</h2>
+                  <p>{{service.description}}</p>
+                  <a href="{{service.buttons.[0].link}}" class="btn btn-primary">{{service.buttons.[0].text}}</a>                  
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light mt-4">
+        <div class="container">
+            <div class="row">
+                {{#each footer}}
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        {{#each this}}
+                        <li class="list-group-item"><a href="{{link}}">{{text}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </footer>
+  </div>
