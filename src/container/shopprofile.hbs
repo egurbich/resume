@@ -1,0 +1,120 @@
+<div class="container">
+
+    <section class="mb-5">
+        <div class="row">
+            <div class="card">
+                <div class="col-6">
+                    <ul class="nav">
+                        {{#each navigation.links as |link|}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{link.href}}">{{link.text}}</a>
+                        </li>                        
+                        {{/each}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Disabled</a>
+                        </li>     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{> purchaseItem}}
+
+    <div class="fw-bold"><hr /></div>
+
+    <section>
+        <h3>{{userInfo.title}}</h3>
+        <div class="card mt-4">
+            <div class="card-body">
+                <div class="card-title fw-bold">{{userInfo.profileData.title}}</div>
+                <div class="card mt-4 px-2">
+                    <div class="row">
+                        {{#each userInfo.profileData.fullName}}
+                            <div class="col-4">
+                                <div>{{this.title}}</div>
+                                <div class="fw-bold">{{this.value}}</div>
+                            </div>
+                        {{/each}}
+                    </div>    
+                </div>
+                <div class="card mt-4 px-2">
+                    <div class="row">
+                        {{#each userInfo.profileData.otherInfo}}
+                            <div class="col-4">
+                                <div>{{this.title}}</div>
+                                <div class="fw-bold">{{this.value}}</div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="card mt-4 px-2">
+                    <div class="row">
+                        <div class="col-4 my-2"><a href="{{userInfo.buttons.[0].link}}" class="btn {{#if userInfo.buttons.[0].isPrimary}}btn-primary{{/if}}">{{userInfo.buttons.[0].text}}</a></div>
+                        <div class="col-4 my-2"><a href="{{userInfo.buttons.[1].link}}" class="btn {{#if userInfo.buttons.[1].isSecondary}}btn-secondary{{/if}}">{{userInfo.buttons.[1].text}}</a></div>
+                        <div class="col-4 my-2"><a href="{{userInfo.buttons.[2].link}}" class="btn {{#if userInfo.buttons.[2].isDanger}}btn-danger{{/if}}">{{userInfo.buttons.[2].text}}</a></div>
+                    </div>
+                </div>
+            </div>               
+        </div>
+    </section>
+
+    <section>
+        <div class="card mt-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card-title fw-bold">{{userInfo.recipients.title}}</div>
+                    {{#each userInfo.recipients.users}}
+                        <div class="col-4">
+                            <div class="card p-2">
+                                <div class="mt-2 fw-bold">{{this.name}}</div>
+                                <div class="mt-2">{{this.phone}}</div>
+                                <div class="mt-2"><a href="{{this.button.link}}" class="btn btn-primary">{{this.button.text}}</a></div>
+                            </div>
+                        </div>
+                    {{/each}}                    
+                </div>
+            </div> 
+        </div>   
+    </section>
+
+    <section>
+        <div class="card mt-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="card-title fw-bold">{{userInfo.contacts.title}}</div>
+                        {{#each userInfo.contacts.contactData}}
+                            <div class="col-4">
+                                <div class="card p-2">
+                                    <div class="mt-2">{{this.title}}</div>
+                                    <div class="mt-2">{{this.value}}</div>
+                                    <div class="mt-2">
+                                        <a href="{{this.button.link}}" 
+                                            class="btn 
+                                            {{#if this.button.isPrimary}}btn-primary{{/if}}
+                                            {{#if this.button.isSecondary}}btn-outline-secondary{{/if}}
+                                            {{#if this.button.isDanger}}btn-outline-danger{{/if}}">
+                                            {{this.button.text}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="footer mt-4">
+            {{#each footer}}
+                <div class="footer-section">
+                    {{#each this}}
+                        <a href="{{link}}">{{text}}</a>
+                    {{/each}}
+                </div>
+            {{/each}}
+        </div>
+    </section>
